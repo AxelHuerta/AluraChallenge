@@ -8,8 +8,12 @@ const outputContainer = document.getElementById("output-container");
 const outputArea = document.getElementById("text-output");
 const textResult = document.getElementById("text-result");
 
+// limpiar textarea
+getInputText.value = "";
+
 // comprobar que el texto ingresado cumpla con los requisitos
 getInputText.addEventListener("input", () => {
+  if (getInputText.value == "") return;
   getInputText.value = getInputText.value.replace(/[^a-zñ\s]/g, "");
 });
 
