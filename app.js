@@ -6,33 +6,12 @@ const btnDesencriptar = document.getElementById("btn-desencriptar");
 const setOutputText = document.getElementById("text-output");
 const outputContainer = document.getElementById("output-container");
 const outputArea = document.getElementById("text-output");
+const result = document.getElementById("to-show");
 const textResult = document.getElementById("text-result");
+const copyBtn = document.getElementById("btn-copy");
 
 // limpiar textarea
 getInputText.value = "";
-
-// comprobar que el texto ingresado cumpla con los requisitos
-getInputText.addEventListener("input", () => {
-  if (getInputText.value == "") return;
-  getInputText.value = getInputText.value.replace(/[^a-zñ\s]/g, "");
-});
-
-// btn encriptar
-btnEncriptar.addEventListener("click", () => {
-  if (getInputText.value == "") return;
-  let text = encriptar(getInputText.value);
-  console.log(text);
-  hideImg();
-  setText(text);
-});
-
-// btn desencriptar
-btnDesencriptar.addEventListener("click", () => {
-  if (getInputText.value == "") return;
-  let text = desencriptar(getInputText.value);
-  hideImg();
-  setText(text);
-});
 
 // encriptar texto
 const encriptar = (text) => {
@@ -62,6 +41,37 @@ const hideImg = () => {
 // poner el texto en pantalla
 const setText = (text) => {
   textResult.innerHTML = text;
-  outputArea.style.display = "inline";
-  textResult.style.display = "inline";
+  result.style.display = "flex";
 };
+
+// comprobar que el texto ingresado cumpla con los requisitos
+getInputText.addEventListener("input", () => {
+  if (getInputText.value == "") return;
+  getInputText.value = getInputText.value.replace(/[^a-zñ\s]/g, "");
+});
+
+// btn encriptar
+btnEncriptar.addEventListener("click", () => {
+  if (getInputText.value == "") return;
+  let text = encriptar(getInputText.value);
+  console.log(text);
+  hideImg();
+  setText(text);
+});
+
+// btn desencriptar
+btnDesencriptar.addEventListener("click", () => {
+  if (getInputText.value == "") return;
+  let text = desencriptar(getInputText.value);
+  hideImg();
+  setText(text);
+});
+
+// copiar texto
+copyBtn.addEventListener("click", () => {
+  copyBtn.innerHTML = "¡Texto copiado!";
+  setInterval(() => {
+    copyBtn.innerHTML = "Copiar";
+  }, 3000);
+  navigator.clipboard.writeText(textResult.textContent);
+});
