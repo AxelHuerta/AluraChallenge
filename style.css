@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+:root {
+  --blueColor: #0a3871;
+  --whiteColor: #fff;
+  --blackColor: #000;
+  --lightBg: #f3f5fc;
+  --btnWhite: #d8dfe8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  max-height: 100vh;
+}
+
+#main {
+  background: var(--lightBg);
+  color: var(--blackColor);
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+#logo {
+  width: 2em;
+  position: absolute;
+  left: 5em;
+  top: 3em;
+}
+
+#text-area {
+  padding: 5em 8em;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#text-input {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  width: 100%;
+  height: 95%;
+  margin: 2em 0 1em;
+  resize: none;
+  text-transform: lowercase;
+}
+
+#text-input:focus {
+  outline: none;
+}
+
+#text-input::placeholder {
+  opacity: 1;
+  color: var(--blueColor);
+}
+
+.btns-encriptar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btns-encriptar > p {
+  margin-bottom: 1em;
+}
+
+.btns-encriptar > p > span {
+  background: var(--blackColor);
+  color: var(--whiteColor);
+  padding: 0.1em 0.6em;
+  margin-right: 0.5em;
+  border-radius: 1em;
+}
+
+.btns-encriptar > div {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+}
+
+.btn {
+  width: 20em;
+  height: 4em;
+  border-radius: 5em;
+}
+
+.btn-blue {
+  background: var(--blueColor);
+  color: var(--whiteColor);
+  border: none;
+}
+
+.btn-white {
+  background: var(--btnWhite);
+  border: 1px solid var(--blueColor);
+}
+
+#text-result {
+  display: none;
+}
+
+#text-output {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--whiteColor);
+  max-width: 500px;
+  min-width: 200px;
+  max-height: 79vh;
+  margin: 3em;
+  padding: 3em;
+  border-radius: 1em;
+  box-shadow: 16px 15px 93px -61px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 16px 15px 93px -61px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 16px 15px 93px -61px rgba(0, 0, 0, 0.75);
+  overflow-y: auto;
+}
+
+#text-output::-webkit-scrollbar {
+  width: 7px;
+}
+
+#text-output > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#text-output > div > img {
+  width: 100%;
+}
+
+#text-output > h2 {
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+/* width 1100 */
+@media screen and (max-width: 1100px) {
+  .btn {
+    width: 15em;
+  }
+}
+
+/* width 920 */
+@media screen and (max-width: 920px) {
+  #main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+  }
+
+  #text-area {
+    padding: 5em 5em 1em;
+  }
+
+  .btn {
+    width: 20em;
+  }
+
+  #text-output {
+    max-width: 100%;
+    margin: 1em 2em;
+  }
+
+  #text-output > div > img {
+    display: none;
+  }
+}
+
+/* width 700 */
+@media screen and (max-width: 700px) {
+  .btns-encriptar > div {
+    flex-direction: column;
+  }
+
+  #text-output {
+    margin: 1em;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 1em 0;
+  }
+}

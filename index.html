@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main id="main">
+      <div id="text-area">
+        <img src="images/logo.png" alt="logo" id="logo" />
+        <textarea placeholder="Ingrese el texto aquí" id="text-input" autofocus>
+        </textarea>
+        <div class="btns-encriptar">
+          <p><span>!</span>Solo letras minúsculas sin acentos</p>
+          <div>
+            <button id="btn-encriptar" class="btn btn-blue">Encriptar</button>
+            <button id="btn-desencriptar" class="btn btn-white">
+              Desencriptar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="text-output">
+        <div id="output-container">
+          <img id="image" src="images/doll.png" alt="doll" />
+          <h2>Ningún mensaje fue encontrado</h2>
+          <p>Ingresa el texto que desees encripatar o desencriptar</p>
+        </div>
+        <p id="text-result">Lorem ipsum</p>
+      </div>
+    </main>
+    <script src="app.js" />
+  </body>
+</html>
