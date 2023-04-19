@@ -1,3 +1,5 @@
+console.log("js is working");
+
 const getInputText = document.getElementById("text-input");
 const btnEncriptar = document.getElementById("btn-encriptar");
 const btnDesencriptar = document.getElementById("btn-desencriptar");
